@@ -1,22 +1,30 @@
 import React, {useState} from 'react'
 import ReactDOM from 'react-dom'
+
 const Statistic = ({text, value}) => {
   return(
-      <div>
-        <p>{text} {value}</p>
-      </div>
+        <tr>
+            <td>{text}</td>
+            <td>{value}</td> 
+        </tr>
   )
 }
+
 const Statistics = (props) => {
         if(props.Total>0){
           return (
             <div>
-              <Statistic text="good" value={props.good} />
+              <h3>Statistics</h3>
+              <table>
+                <tbody>
+                <Statistic text="good" value={props.good} />
               <Statistic text="bad" value={props.bad} />
               <Statistic text="neutral" value={props.neutral} />
               <Statistic text="Total" value={props.Total} />
               <Statistic text="Average" value={props.Average} />
               <Statistic text="Positive" value={props.Positive} />
+                </tbody>
+              </table>
             </div>
           )
         }
